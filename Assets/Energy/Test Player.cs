@@ -53,6 +53,5 @@ public class TestPlayer : MonoBehaviour
     private void StartBoost()
     {
         currentSpeed += boostSpeed;
-        Debug.Log(energy.Current);
     }
 }
