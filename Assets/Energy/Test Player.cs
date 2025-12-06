@@ -4,12 +4,10 @@ using UnityEngine.Rendering;
 public class TestPlayer : MonoBehaviour
 {
     [Header("Input")]
-    public KeyCode dashKey = KeyCode.LeftShift;
+    public KeyCode boostKey = KeyCode.LeftShift;
 
-    //[SerializeField] private EnergyComponent BoostGauge;
-
-    [SerializeField] private float CurrentSpeed = 0;
-    [SerializeField] private float BoostSpeed = 50;
+    [SerializeField] private float currentSpeed = 0;
+    [SerializeField] private float boostSpeed = 50;
 
     private IEnergy energy;
 
@@ -21,13 +19,13 @@ public class TestPlayer : MonoBehaviour
 
     private void Update()
     {
-        if (CurrentSpeed < 99.0f)
-            ++CurrentSpeed;
+        if (currentSpeed < 99.0f)
+            ++currentSpeed;
 
-        if (CurrentSpeed > 100.0f)
-            CurrentSpeed -= 0.1f;
+        if (currentSpeed > 100.0f)
+            currentSpeed -= 0.1f;
 
-        if (Input.GetKeyDown(dashKey))
+        if (Input.GetKeyDown(boostKey))
         {
             TryBoost();
         }
@@ -41,6 +39,7 @@ public class TestPlayer : MonoBehaviour
         if (energy.IsFull)
         {
             energy.TryConsume(99.0f);
+            Debug.Log("ブーストできた、残るエネルギーは  " + energy.Current);
         }
         else
         {
@@ -53,7 +52,7 @@ public class TestPlayer : MonoBehaviour
 
     private void StartBoost()
     {
-        CurrentSpeed += BoostSpeed;
+        currentSpeed += boostSpeed;
         Debug.Log(energy.Current);
     }
 }

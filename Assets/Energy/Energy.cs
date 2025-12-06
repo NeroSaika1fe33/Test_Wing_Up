@@ -6,7 +6,6 @@ public class Energy : IEnergy
     public float Current { get; private set; }
     public float Max { get; private set; }
     public bool IsFull => Current >= Max - 0.01;
-
     public float RegenPerSecond { get; set; } = 10f;
 
     public event System.Action<float, float> OnEnergyChanged;
