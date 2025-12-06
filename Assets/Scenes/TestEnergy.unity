@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestPlayer
   boostKey: 304
-  currentSpeed: 0
+  currentSpeed: 1
   boostSpeed: 50
 --- !u!1 &296446070
 GameObject:
