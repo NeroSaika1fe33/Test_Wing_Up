@@ -328,9 +328,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dea830cadeac0ea4f8eb66bbfe20062b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestPlayer
-  dashKey: 304
-  CurrentSpeed: 0
-  BoostSpeed: 50
+  boostKey: 304
+  currentSpeed: 0
+  boostSpeed: 50
 --- !u!1 &296446070
 GameObject:
   m_ObjectHideFlags: 0
