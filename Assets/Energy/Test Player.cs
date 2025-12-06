@@ -44,7 +44,7 @@ public class TestPlayer : MonoBehaviour
         }
         else
         {
-            Debug.Log("エナジー不足、ブーストできない！");
+            Debug.Log("エネルギー不足、ブーストできない！");
             return;
         }
 
