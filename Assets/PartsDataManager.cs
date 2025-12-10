@@ -104,7 +104,7 @@ public class PartsDataManager : MonoBehaviour
         string result = "";
         for (int i = 0; i < _Number_of_Parts; i++)
         {
-            if(_PartsName[i] == PartsName)
+            if (_PartsName[i] == PartsName)
             {
                 for (int j = 0; j < _Number_of_data; j++)
                 {
@@ -121,7 +121,7 @@ public class PartsDataManager : MonoBehaviour
     //全パーツのデータを出力
     public void AllPartsData()
     {
-        
+
         for (int i = 0; i < _Number_of_Parts; i++)
         {
             string result = "";
@@ -162,7 +162,7 @@ public class PartsDataManager : MonoBehaviour
         string DataTypes = DataReader.ReadLine();       //データ型を取り込み
         string[] DataTypeList = DataTypes.Split(',');   //配列に変換
         //データ型情報を保存
-        for (int i = 0; i < DataTypeList.Length; i++)   
+        for (int i = 0; i < DataTypeList.Length; i++)
         {
             _DataType.Add(DataTypeList[i]);
             Number_of_data += 1;         //データ数をカウント
@@ -172,12 +172,12 @@ public class PartsDataManager : MonoBehaviour
         //データ名を保存
         string DataName = DataReader.ReadLine();        //データ名を取り込み
         string[] DataNameList = DataName.Split(',');    //配列に変換
-        for (int i = 0; i < DataNameList.Length; i++)   
+        for (int i = 0; i < DataNameList.Length; i++)
         {
             _DataName.Add(DataNameList[i]);
         }
         //パーツデータを保存
-        for(int c=0;c< DataTypeList.Length; c++)
+        for (int c = 0; c < DataTypeList.Length; c++)
         {
             string PartsData = DataReader.ReadLine();       //パーツを取り込み
             if (PartsData == null) break;                   //パーツがなければ保存終了
@@ -191,7 +191,7 @@ public class PartsDataManager : MonoBehaviour
                 _PartsData.Add(PartsDataList[i]);
             }
             _PartsData_All.Add(_PartsData);
-            
+
         }
         _Number_of_Parts = Parts_of_data;     //パーツ数を設定
     }

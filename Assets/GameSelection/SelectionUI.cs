@@ -8,6 +8,8 @@ public class SelectionUI : MonoBehaviour
     public TMP_Text categoryText;
     public TMP_Text itemText;
 
+    public PartsDataManager partsDataManager;
+
     //Changes
     string[] categories = { "Body", "Wheel", "Wing" };
     string[][] items = {
@@ -31,6 +33,7 @@ public class SelectionUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             currentCategory = (currentCategory - 1 + categories.Length) % categories.Length;
+
             UpdateUI();
         }
         if (Input.GetKeyDown(KeyCode.D))

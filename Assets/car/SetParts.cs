@@ -6,6 +6,7 @@ public class SetParts : MonoBehaviour
 {
     public PartsDataManager partsDataManager;
     public List<Transform> Installation_Location_Tire = new List<Transform>();
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
