@@ -11,10 +11,10 @@ public class SetParts : MonoBehaviour
     {
         //Aをi番目の場所に配置(パーツタイプは自動判別)
         int i = 0;
-        PartsArrangement("A", Installation_Location_Tire[i]);
+        PartsArrangement("Normal_Tire", Installation_Location_Tire[0]);
+		PartsArrangement("Normal_Tire", Installation_Location_Tire[1]);
 
-
-    }
+	}
 
     // Update is called once per frame
     void Update()
@@ -37,6 +37,7 @@ public class SetParts : MonoBehaviour
         childObject.transform.localPosition = new Vector3(0, 0, 0);
         childObject.transform.localRotation = Quaternion.identity;
         childObject.transform.localScale = new Vector3(1, 1, 1);
-    }
+
+	}
 
 }
