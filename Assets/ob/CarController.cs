@@ -60,6 +60,7 @@ public class CarController : MonoBehaviour
     public bool canControl = true;
 
     QTEController qteConTroller;
+
     void Start()    
     {
         //panel off
@@ -81,20 +82,18 @@ public class CarController : MonoBehaviour
             canControl = true;   // have not qte->startgame
         }
 
-
-
         if (carHealth == null)
-        {
             carHealth = GetComponent<CarHealth>();
-        }
-        
-       
 
+        // Apply selection data (example)
+        acceleration += GameSelectionData.addAcceleration;
+        maxSpeed += GameSelectionData.addMaxSpeed;
+
+  
     }
 
     void Update()
     {
-        
         if (!canControl) return;//hp = 0 -> car can"t  control
 
         if (isWallKnockback)
