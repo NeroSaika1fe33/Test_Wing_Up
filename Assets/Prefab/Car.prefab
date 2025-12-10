@@ -217,8 +217,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3880940702348418176}
   - {fileID: 4399554428067954548}
+  - {fileID: 3880940702348418176}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -87.625, z: 0}
 --- !u!33 &7313483402784987018
@@ -420,9 +420,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SetParts
   partsDataManager: {fileID: 0}
+  Installation_Location_Body: []
   Installation_Location_Tire:
   - {fileID: 3880940702348418176}
   - {fileID: 4399554428067954548}
+  Installation_Location_Wing: []
 --- !u!114 &6650508746966811505
 MonoBehaviour:
   m_ObjectHideFlags: 0

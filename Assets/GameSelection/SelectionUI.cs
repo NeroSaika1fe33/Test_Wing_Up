@@ -8,14 +8,16 @@ public class SelectionUI : MonoBehaviour
     public TMP_Text categoryText;
     public TMP_Text itemText;
 
-    public PartsDataManager partsDataManager;
+    //public PartsDataManager partsDataManager;
+    //Carのスクリプトを取得
+    public SetParts Car;
 
     //Changes
-    string[] categories = { "Body", "Wheel", "Wing" };
+    string[] categories = { "Body", "Tire", "Wing" };
     string[][] items = {
-        new string[] { "Body A", "Body B" },
-        new string[] { "Wheel A", "Wheel B" },
-        new string[] { "Wing A", "Wing B" }
+        new string[] { "Normal_Body A", "Normal_Body B" },
+        new string[] { "Normal_Tire A", "Normal_Tire B" },
+        new string[] { "Normal_Wing A", "Normal_Wing B" }
     };
     //player now select category(left/right)
     int currentCategory = 0;
@@ -69,6 +71,14 @@ public class SelectionUI : MonoBehaviour
     {
         categoryText.text = "Category: " + categories[currentCategory];
         itemText.text = "Item: " + items[currentCategory][selected[currentCategory]];
+
+        //パーツ名を更新
+        if(currentCategory==0)
+        Car.UpdateBodyParts(items[currentCategory][selected[currentCategory]]);
+        else if(currentCategory==1)
+        Car.UpdateTireParts(items[currentCategory][selected[currentCategory]]);
+        else if(currentCategory==2)
+        Car.UpdateWingParts(items[currentCategory][selected[currentCategory]]);
     }
 
     void ConfirmSelection()

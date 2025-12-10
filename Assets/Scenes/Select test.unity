@@ -619,6 +619,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1277236267362209634, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+      propertyPath: m_Name
+      value: TirePos1
+      objectReference: {fileID: 0}
     - target: {fileID: 1739857824934938994, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
       propertyPath: m_LocalScale.x
       value: 161.49022
@@ -692,9 +696,45 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7211664458814562250, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+      propertyPath: BodyPrefabName
+      value: Normal_Body A
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211664458814562250, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+      propertyPath: TirePrefabName
+      value: Normal_Tire A
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211664458814562250, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+      propertyPath: WingPrefabName
+      value: Normal_Wing A
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211664458814562250, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
       propertyPath: partsDataManager
       value: 
       objectReference: {fileID: 933547358}
+    - target: {fileID: 7211664458814562250, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+      propertyPath: Installation_Location_Body.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211664458814562250, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+      propertyPath: Installation_Location_Tire.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211664458814562250, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+      propertyPath: Installation_Location_Wing.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211664458814562250, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+      propertyPath: 'Installation_Location_Body.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1641993098}
+    - target: {fileID: 7211664458814562250, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+      propertyPath: 'Installation_Location_Tire.Array.data[2]'
+      value: 
+      objectReference: {fileID: 967099090}
+    - target: {fileID: 7211664458814562250, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+      propertyPath: 'Installation_Location_Wing.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1016491899}
     - target: {fileID: 7313483402784987018, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -703,13 +743,23 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7896521178867944347, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+      propertyPath: m_Name
+      value: TirePos2
+      objectReference: {fileID: 0}
     - target: {fileID: 9175121018191381896, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
       propertyPath: m_Name
       value: Car
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1739857824934938994, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 1641993098}
+    - targetCorrespondingSourceObject: {fileID: 1739857824934938994, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1016491899}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
 --- !u!1 &933547357
@@ -755,6 +805,42 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &967099090 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4399554428067954548, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+  m_PrefabInstance: {fileID: 882872461}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1016491898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1016491899}
+  m_Layer: 0
+  m_Name: WingPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1016491899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016491898}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.368, z: -0.561}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1823537289}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1399650644
 GameObject:
@@ -894,6 +980,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399650644}
   m_CullTransparentMesh: 1
+--- !u!1 &1641993097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1641993098}
+  m_Layer: 0
+  m_Name: BodyPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1641993098
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641993097}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.295, z: 0.954}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1823537289}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1823537280 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7211664458814562250, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+  m_PrefabInstance: {fileID: 882872461}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f875309a26a90343aaa24f2cd989ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetParts
+--- !u!4 &1823537289 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1739857824934938994, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+  m_PrefabInstance: {fileID: 882872461}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2002012563
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,7 +1061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SelectionUI
   categoryText: {fileID: 826021195}
   itemText: {fileID: 87667355}
-  partsDataManager: {fileID: 933547358}
+  Car: {fileID: 1823537280}
 --- !u!114 &2002012565
 MonoBehaviour:
   m_ObjectHideFlags: 0
