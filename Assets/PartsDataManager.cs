@@ -19,8 +19,13 @@ public class PartsDataManager : MonoBehaviour
     void Start()
     {
         //デバッグ表示
+<<<<<<< Updated upstream
         PartsDataDebug();
         AllPartsData();
+=======
+       // PartsDataDebug();
+       // AllPartsData();
+>>>>>>> Stashed changes
     }
     private void Awake()
     {
@@ -145,10 +150,22 @@ public class PartsDataManager : MonoBehaviour
     {
         return _PartsName;
     }
+<<<<<<< Updated upstream
+=======
+    /*
+>>>>>>> Stashed changes
     public int Get_Number_of_Parts()
     {
         return _Number_of_Parts;
     }
+<<<<<<< Updated upstream
+=======
+    */
+    public int Number_of_Parts
+    {
+        get { return _Number_of_Parts; }
+    }
+>>>>>>> Stashed changes
 
     //CSVのデータを読み込んで保存する関数
     public void FileLoad()

@@ -770,6 +770,7 @@ GameObject:
   - component: {fileID: 199388024}
   - component: {fileID: 199388027}
   - component: {fileID: 199388026}
+  - component: {fileID: 199388028}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -802,7 +803,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &199388019
 BoxCollider:
@@ -977,6 +978,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c12690048e0bf4fbb4a6feae02fcd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::car_manager
+--- !u!114 &199388028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199388016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35332d0b3c582604e99945b54ca9e462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DontDestroy
+  unload_scenename: Result
+  load_scenename: Result
 --- !u!1 &237443934
 GameObject:
   m_ObjectHideFlags: 0
