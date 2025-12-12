@@ -695,6 +695,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6650508746966811505, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7211664458814562250, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
       propertyPath: BodyPrefabName
       value: Normal_Body A

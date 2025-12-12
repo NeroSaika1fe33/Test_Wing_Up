@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6293cc60800d12a4da49ab6605edd18a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TitleAnyKey
-  nextSceneName: Select
+  nextSceneName: Select test
 --- !u!1 &848605859
 GameObject:
   m_ObjectHideFlags: 0

@@ -10013,9 +10013,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 916556459}
     - target: {fileID: 7211664458814562250, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+      propertyPath: BodyPrefabName
+      value: Normal_Body A
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211664458814562250, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+      propertyPath: TirePrefabName
+      value: Normal_Tire A
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211664458814562250, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+      propertyPath: WingPrefabName
+      value: Normal_Wing A
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211664458814562250, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
       propertyPath: partsDataManager
       value: 
       objectReference: {fileID: 1477081423}
+    - target: {fileID: 7211664458814562250, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+      propertyPath: Installation_Location_Body.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7211664458814562250, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
+      propertyPath: Installation_Location_Wing.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9175121018191381896, guid: 7c939baeb3e46034598b9718c177d62a, type: 3}
       propertyPath: m_Name
       value: Car

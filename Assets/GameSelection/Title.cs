@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class TitleAnyKey : MonoBehaviour
 {
     
-    public string nextSceneName = "Select";
+    public string nextSceneName = "Select test";
 
     void Update()
     {
