@@ -2,7 +2,7 @@ using UnityEngine;
 using static UnityEngine.InputSystem.HID.HID;
 public class goal_contact : MonoBehaviour
 {
-    public CarController carController;
+    //public CarController carController;
 
     float Timer = 0;	//タイマー
 	bool count = false;	//カウントするかどうか
@@ -45,7 +45,9 @@ public class goal_contact : MonoBehaviour
     {
         var car_situation = other.GetComponent<car_situation>();
         var car_manager = other.GetComponent<car_manager>();
-        if (car_manager != null && car_situation != null)
+		var carController = other.GetComponent<CarController>();
+
+		if (car_manager != null && car_situation != null)
         {
             car_situation.steat_goal();
             car_manager.Set_GoalTime(Get_Time_m(), Get_Time_s(), Get_Time_ms());

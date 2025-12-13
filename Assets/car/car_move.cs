@@ -15,12 +15,6 @@ public class car_move : MonoBehaviour
     private Rigidbody rb;
     private Transform tf;
     private Animator anim;
-
-
-
-
-
-
     private Vector3 velocity;
     public void start()
     {
