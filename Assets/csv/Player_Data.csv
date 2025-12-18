@@ -1,0 +1,3 @@
+﻿string,string,string,string,string,float,float,float,string,string
+プレイヤー名,ID,ボーディ,ゼンマイ,タイル,最高速度,加速度,重量,アビリティ,リザルト
+プレイヤー１,Player1,,,,0,0,0,,
