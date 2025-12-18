@@ -12,7 +12,7 @@ public class PlayerStatsManager
     private bool PlayerStatsRead(Player _player)
     {
         string DataPath = "Asset/csv/PlayerData.csv";
-        List CsvReader(DataPath);
+        //List CsvReader(DataPath);
         return false;
     }
 
