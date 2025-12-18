@@ -7,7 +7,6 @@ public interface IStats
     float maxSpeed { get; set; }
     float acceleration { get; set; }
     float weight { get; set; }
-    //bool isActive {  get; set; }
 
     string abilityName { get; set; }
 }

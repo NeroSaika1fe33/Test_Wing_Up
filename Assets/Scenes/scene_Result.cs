@@ -12,6 +12,7 @@ public class scene_Result : MonoBehaviour
 	public void OnClick()
 	{
 		SceneManager.LoadScene("Title");
+		PlayerDataManager.Instance.Save();
 		//Debug.Log("‰Ÿ‚³‚ê‚½!");  // ƒƒO‚ğo—Í
 	}
 }

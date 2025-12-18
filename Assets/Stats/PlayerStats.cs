@@ -5,17 +5,16 @@ using UnityEngine.UIElements.Experimental;
 
 public class PlayerStats : MonoBehaviour, IStats
 {
-    //public PartsStats partsStats { get; private set; }
     public float maxSpeed { get; set; } = 100.0f;
     public float acceleration { get; set; } = 50.0f;
     public float weight { get; set; } = 10.0f;
     public string abilityName { get; set; } = null;
 
-    public PartsDataManager PDManager;
+    [SerializeField] private PartsDataManager PDManager;
 
     private SetParts Car;
 
-    private Part[] parts = new Part[3];
+    public Part[] parts { get; private set; } = new Part[3];
     private void Awake()
     {
         Car = GetComponentInParent<SetParts>();
@@ -26,28 +25,33 @@ public class PlayerStats : MonoBehaviour, IStats
             parts[i].ability = null;
         }
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         InitParts();
-        //一回更新
         UpdatePartsStats();
+        Debug.Log("Stats: " + maxSpeed + "," + acceleration + "," + weight);
     }
 
     protected void InitParts()
     {
-        parts[0].partsName = Car.BodyPrefabName;
-        parts[1].partsName = Car.MainspringPrefabName;
-        parts[2].partsName = Car.TirePrefabName;
-        for (int i = 0; i < parts.Length; i++)
+        if (parts != null)
         {
-            string Name = PDManager.Get_PartsName(parts[i].partsName);
-            parts[i].maxSpeed = PDManager.Get_PartsData_int(Name, "最高速度");
-            parts[i].acceleration = PDManager.Get_PartsData_int(Name, "加速度");
-            parts[i].weight = PDManager.Get_PartsData_int(Name, "重量");
-            //parts[i].ability.Name = PDManager.Get_PartsData_string(parts[i].partsName, "アビリティ");
+            parts[0].partsName = Car.BodyPrefabName;
+            parts[1].partsName = Car.MainspringPrefabName;
+            parts[2].partsName = Car.TirePrefabName;
+            for (int i = 0; i < parts.Length; i++)
+            {
+                string Name = PDManager.Get_PartsName(parts[i].partsName);
+                parts[i].maxSpeed = PDManager.Get_PartsData_int(Name, "最高速度");
+                parts[i].acceleration = PDManager.Get_PartsData_int(Name, "加速度");
+                parts[i].weight = PDManager.Get_PartsData_int(Name, "重量");
+                //parts[i].ability.Name = PDManager.Get_PartsData_string(parts[i].partsName, "アビリティ");
+            }
         }
-
+        else
+        {
+            Debug.LogError("CarPartsがアサインせれていない！！");
+        }
     }
     //パーツステータス更新
     protected void UpdatePartsStats()

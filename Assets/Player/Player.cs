@@ -1,18 +1,21 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player
 {
-    public SetParts MyCar = null;
+    public string name;
+    public int id;
+    public string[] PartsName = new string[3];
+    public float maxSpeed;
+    public float acceleration;
+    public float weight;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Player(string _name, int _id, string[] _partsName, float _maxSpeed, float _acceleration, float _weight)
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        this.name = _name;
+        this.id = _id;
+        PartsName = _partsName;
+        this.maxSpeed = _maxSpeed;
+        this.acceleration = _acceleration;
+        this.weight = _weight;
     }
 }
