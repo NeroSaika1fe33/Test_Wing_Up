@@ -54,6 +54,7 @@ public class PlayerDataManager : MonoBehaviour
         result = _result;
     }
 
+    //データ保存用
     public void Save()
     {
         PlayerSaveData saveData = new PlayerSaveData(
@@ -67,11 +68,13 @@ public class PlayerDataManager : MonoBehaviour
             result
             );
 
+        //jsonに入力
         string json = JsonUtility.ToJson(saveData, true);
         File.WriteAllText(savePath, json);
         Debug.Log("保存されたパース：" + savePath);
     }
 
+    //データ
     public void Load()
     {
         if (File.Exists(savePath))

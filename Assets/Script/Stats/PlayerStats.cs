@@ -7,9 +7,9 @@ using UnityEngine.UIElements.Experimental;
 [System.Serializable]
 public class PlayerStats : MonoBehaviour, IStats
 {
-    public float maxSpeed { get; set; } = 100.0f;
-    public float acceleration { get; set; } = 50.0f;
-    public float weight { get; set; } = 10.0f;
+    public float maxSpeed { get; set; }
+    public float acceleration { get; set; }
+    public float weight { get; set; }
     public string abilityName { get; set; } = null;
 
     [SerializeField] private PartsDataManager PDManager;
@@ -29,13 +29,10 @@ public class PlayerStats : MonoBehaviour, IStats
     }
     void Start()
     {
-        if (GameManager.Instance.getCurrentScnen() == "InGame")
-        {
             PlayerDataManager.Instance.SetPlayer(this);
             InitParts();
             UpdatePartsStats();
             Debug.Log("Stats: " + maxSpeed + "," + acceleration + "," + weight);
-        }
     }
 
     protected void InitParts()
