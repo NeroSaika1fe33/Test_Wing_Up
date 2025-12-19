@@ -6,19 +6,25 @@ public class PlayerDataManager : MonoBehaviour
     //シングルトンパターン
     public static PlayerDataManager Instance { get; private set; }
 
+    //一人プレイに仮定する
+    public string playerName = "Player1";
+    public int playerID = 1;
+    public string[] PartsName = new string[3];
+    public string abilityName = "なし";
 
-    public Player player { get; private set; }
+    private PlayerStats playerStats { get; set; }   
+    //Player player { get; private set; }
     public string result { get; private set; }
 
     private string savePath => Path.Combine(Application.persistentDataPath, "playData.json");
 
     //保存するためのデータ
-    [System.Serializable]
-    private class PlayerSaveData
-    {
-        public Player player;
-        public string result;
-    }
+    //[System.Serializable]
+    //private class PlayerSaveData
+    //{
+    //    public Player player;
+    //    public string result;
+    //}
 
     void Awake()
     {
@@ -31,12 +37,16 @@ public class PlayerDataManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        Load(); 
+        Load();
     }
 
-    public void SetPlayer(Player _player)
+    public void SetPlayer(PlayerStats _playerStats)
     {
-        player = _player;
+        playerStats = _playerStats;
+        for (int i = 0; i < PartsName.Length; i++)
+        {
+            PartsName[i] = _playerStats.parts[0].partsName;
+        }
     }
 
     public void SetMatchResult(string _result)
@@ -46,11 +56,16 @@ public class PlayerDataManager : MonoBehaviour
 
     public void Save()
     {
-        PlayerSaveData saveData = new PlayerSaveData
-        {
-            player = player,
-            result = result
-        };
+        PlayerSaveData saveData = new PlayerSaveData(
+            playerName,
+            playerID,
+            PartsName,
+            playerStats.maxSpeed,
+            playerStats.acceleration,
+            playerStats.weight,
+            abilityName,
+            result
+            );
 
         string json = JsonUtility.ToJson(saveData, true);
         File.WriteAllText(savePath, json);
@@ -63,14 +78,17 @@ public class PlayerDataManager : MonoBehaviour
         {
             string json = File.ReadAllText(savePath);
             PlayerSaveData saveData = JsonUtility.FromJson<PlayerSaveData>(json);
-            player = saveData.player;
-            result = saveData.result;
             Debug.Log("プレーデータを読み込む");
         }
         else
         {
             Debug.Log("ファイルを見つからない");
         }
+    }
+
+    public void Register(PlayerStats _playerStats)
+    {
+        this.playerStats = _playerStats;
     }
 
     private void Update()

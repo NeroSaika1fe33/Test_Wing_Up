@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.UIElements.Experimental;
 
+[System.Serializable]
 public class PlayerStats : MonoBehaviour, IStats
 {
     public float maxSpeed { get; set; } = 100.0f;
@@ -27,9 +29,13 @@ public class PlayerStats : MonoBehaviour, IStats
     }
     void Start()
     {
-        InitParts();
-        UpdatePartsStats();
-        Debug.Log("Stats: " + maxSpeed + "," + acceleration + "," + weight);
+        if (GameManager.Instance.getCurrentScnen() == "InGame")
+        {
+            PlayerDataManager.Instance.SetPlayer(this);
+            InitParts();
+            UpdatePartsStats();
+            Debug.Log("Stats: " + maxSpeed + "," + acceleration + "," + weight);
+        }
     }
 
     protected void InitParts()
@@ -79,11 +85,13 @@ public class PlayerStats : MonoBehaviour, IStats
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+        if (GameManager.Instance.getCurrentScene() = "Car Parts Selection")
         {
-            UpdateParts();
-            UpdatePartsStats();
-            Debug.Log(maxSpeed);
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+            {
+                UpdateParts();
+                UpdatePartsStats();
+            }
         }
     }
 }

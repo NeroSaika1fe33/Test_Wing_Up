@@ -15,22 +15,23 @@ public class QTEController : MonoBehaviour
     public CarController carcontroll;
     public goal_contact Goal_Contact;
 
-    int currentCount = 0;
-    int targetCount = 20;
+    int currentCount = 0;// 現在の連打回数
+    int targetCount = 20;// 目標連打回数
 
-    bool isRunning = false;
+    bool isRunning = false;// QTE実行中flag
 
     [Header("Start")]
-    bool isStartGameQTE = false;
-    public float startQTETime = 3f;
-    public float timeLimit = 5f;
-    float timer = 0f;
+    bool isStartGameQTE = false; //ゲーム開始時のQTEかどうか
+    public float startQTETime = 3f;/// 開始QTEの表示用
+    public float timeLimit = 5f; // 制限時間
+    float timer = 0f;            // 残り時間
 
 
     void Update()
     {
+        // 実行中でなければ何もしない
         if (!isRunning) return;
-
+        // 残り時間を減らす
         timer -= Time.deltaTime;
 
         //カウントダウン
@@ -38,7 +39,7 @@ public class QTEController : MonoBehaviour
         {
             if (timer > 0f)
             {
-                int display = Mathf.CeilToInt(timer);   // 2.8 → 3, 1.2 → 2, 0.3 → 1
+                int display = Mathf.CeilToInt(timer);    // 2.8→3, 1.2→2, 0.3→1 のように切り上げ表示
                 if (display < 0) display = 0;
                 timerText.text = display.ToString();
             }
@@ -66,19 +67,21 @@ public class QTEController : MonoBehaviour
             return;
         }
 
+        // A/Dキー押下でカウント
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
         {
             currentCount++;
             UpdateUI();
 
+            // 目標達成で即成功
             if (currentCount >= targetCount)
             {
-                Success();
+                Success();  
             }
         }
     }
 
-    //Game起動とUI制御
+    //QTE起動とUI制御
     public void Minigame()
     {
         Debug.Log("minigame start");
