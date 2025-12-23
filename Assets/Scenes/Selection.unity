@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 008c87b519b42f94bb1c25c216f22df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustomLists
-  scenename: InGame_test
+  scenename: InGame
   CustomList:
   - 
   - 
@@ -821,6 +821,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdae1f52d6f36cb49b7e7e1f59b80108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  playerName: Player1
+  playerID: 1
+  PartsName:
+  - 
+  - 
+  - 
+  abilityName: "\u306A\u3057"
 --- !u!4 &860770469
 Transform:
   m_ObjectHideFlags: 0

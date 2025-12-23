@@ -6,7 +6,7 @@ public class CustomLists : MonoBehaviour
     SetParts setParts = null;
     GameObject Car = null;
     PartsDataManager PDM;
-    public string scenename = "InGame_test";
+    public string scenename = "InGame";
     public string[] CustomList = new string[3];
 
     void Start()
@@ -34,7 +34,7 @@ public class CustomLists : MonoBehaviour
             Car = GameObject.Find("Car");
             setParts = Car.GetComponent<SetParts>();
             if (setParts != null) { Debug.Log("SetParts発見"); }
-            //Debug.Log("InGame_testシーンの読み込み完了");
+            //Debug.Log("InGameシーンの読み込み完了");
             Debug.Log(PDM.Get_PartsID(CustomList[0]));
             Debug.Log(PDM.Get_PartsID(CustomList[1]));
             Debug.Log(PDM.Get_PartsID(CustomList[2]));
@@ -46,7 +46,7 @@ public class CustomLists : MonoBehaviour
     void OnSceneUnloaded(Scene current)
     {
         //Debug.Log("OnSceneUnloaded: " + current);
-        if (current.name == scenename)
+        if (current.name == "Result")
         {
             Destroy(gameObject);
         }

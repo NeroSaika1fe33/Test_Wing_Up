@@ -16,7 +16,7 @@ public class PlayerDataManager : MonoBehaviour
     //Player player { get; private set; }
     public string result { get; private set; }
 
-    private string savePath => Path.Combine(Application.persistentDataPath, "playData.json");
+    private string savePath => Path.Combine(Application.dataPath, "SaveData/playData.json");
 
     //ï€ë∂Ç∑ÇÈÇΩÇﬂÇÃÉfÅ[É^
     //[System.Serializable]
@@ -45,7 +45,7 @@ public class PlayerDataManager : MonoBehaviour
         playerStats = _playerStats;
         for (int i = 0; i < PartsName.Length; i++)
         {
-            PartsName[i] = _playerStats.parts[0].partsName;
+            PartsName[i] = _playerStats.parts[i].partsName;
         }
     }
 

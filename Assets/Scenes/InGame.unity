@@ -8183,7 +8183,6 @@ MonoBehaviour:
   - 
   - 
   abilityName: "\u306A\u3057"
-  playerStats: {fileID: 8719494522750770607}
 --- !u!1 &1947097571
 GameObject:
   m_ObjectHideFlags: 0

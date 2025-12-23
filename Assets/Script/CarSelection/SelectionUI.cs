@@ -117,12 +117,10 @@ public class SelectionUI : MonoBehaviour
             UpdateSelectedItem();
         }
 
-        //選択確認し、次のシーンに遷移
+        //選択確認し、カスタマイズ情報保存
         if (Input.GetKeyDown(KeyCode.Return))
         {
             lists.DataStorage(items[0][selected[0]], items[1][selected[1]], items[2][selected[2]]);
-
-            SceneManager.LoadScene("Ingame_test");
         }
     }
     //ステータス部分の更新

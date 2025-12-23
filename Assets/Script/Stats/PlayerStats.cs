@@ -29,10 +29,9 @@ public class PlayerStats : MonoBehaviour, IStats
     }
     void Start()
     {
-            PlayerDataManager.Instance.SetPlayer(this);
-            InitParts();
-            UpdatePartsStats();
-            Debug.Log("Stats: " + maxSpeed + "," + acceleration + "," + weight);
+        InitParts();
+        UpdatePartsStats();
+        
     }
 
     protected void InitParts()
@@ -82,13 +81,20 @@ public class PlayerStats : MonoBehaviour, IStats
 
     void Update()
     {
-        if (GameManager.Instance.getCurrentScene() = "Car Parts Selection")
+        if (GameManager.Instance.GetCurrentScene() == SceneList.Car_Selection)
         {
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
             {
                 UpdateParts();
                 UpdatePartsStats();
+                Debug.Log("Stats: " + maxSpeed + "," + acceleration + "," + weight);
             }
+        }
+
+        if (GameManager.Instance.GetCurrentScene() == SceneList.Result)
+        {
+            //Debug.Log("Stats: " + maxSpeed + "," + acceleration + "," + weight);
+            PlayerDataManager.Instance.SetPlayer(this);
         }
     }
 }

@@ -24,7 +24,7 @@ public class car_manager : MonoBehaviour
             SceneCount -= Time.deltaTime;
             if(SceneCount <= 0)
             {
-                SceneManager.LoadScene("Result");
+                GameManager.Instance.LoadScene(SceneList.Result);
                 SceneCount = 0;
             }
         }

@@ -1,0 +1,14 @@
+{
+    "name": "Player1",
+    "id": 1,
+    "PartsName": [
+        "car_1",
+        "Mainspring2",
+        "Normal_Tire"
+    ],
+    "maxSpeed": 200.0,
+    "acceleration": 300.0,
+    "weight": 140.0,
+    "abilityName": "",
+    "result": "なし"
+}
