@@ -3,12 +3,12 @@
     "id": 1,
     "PartsName": [
         "car_1",
-        "Mainspring2",
-        "Normal_Tire"
+        "Mainspring1",
+        "Off-road_Tire"
     ],
-    "maxSpeed": 200.0,
-    "acceleration": 300.0,
-    "weight": 140.0,
+    "maxSpeed": 280.0,
+    "acceleration": 200.0,
+    "weight": 160.0,
     "abilityName": "",
     "result": "なし"
 }

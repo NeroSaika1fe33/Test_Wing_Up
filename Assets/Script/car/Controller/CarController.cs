@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
+    [Header("SceneManagement")]
+    public Vector3 inGameInitPos = new Vector3(50, -2, -95);  
+
     [Header("Auto Move")]
     [Range(0f, 1f)]
     public float autoForwardInput = 0.4f;//自動前進の力 return->inputV
@@ -99,7 +102,7 @@ public class CarController : MonoBehaviour
     private float Timer = 0f;
     Vector3 carPosition;
 
-    
+
     void Start()
     {
 
@@ -139,7 +142,17 @@ public class CarController : MonoBehaviour
         acceleration += GameSelectionData.addAcceleration;
         maxSpeed += GameSelectionData.addMaxSpeed;
 
+        //パーツ選択ならフリーズ
+        if (GameManager.Instance.GetCurrentScene() != SceneList.In_Game)
+        {
+            rb.constraints = RigidbodyConstraints.FreezePosition;
+            rb.isKinematic = true;
+        }
 
+        if (GameManager.Instance.GetCurrentScene() == SceneList.In_Game)
+        {
+            transform.position = inGameInitPos;
+        }
     }
 
     void Update()
@@ -259,7 +272,7 @@ public class CarController : MonoBehaviour
         //ブースト速度計算（※固定ベクトルのmagnitude * driftSpeed）
         boostedSpeed = (new Vector3(20.0f, 20.0f, 20.0f)).magnitude * driftSpeed;
 
-       // 最高速未満なら前進加速
+        // 最高速未満なら前進加速
         if (currentSpeed < currentMaxSpeed)
         {
             rb.AddForce(transform.forward * inputV * acceleration * speedMul, ForceMode.Acceleration);
@@ -451,7 +464,7 @@ public class CarController : MonoBehaviour
             // localHitPoint.z > 0 なら車の前側、< 0 なら後側
             Vector3 localHitPoint = transform.InverseTransformPoint(contact.point); //// localHitPoint.z > 0 car infront
                                                                                     // localHitPoint.z < 0 car back
-　　　　　　// 前側以外（z<=0）は無視
+                                                                                    // 前側以外（z<=0）は無視
             if (localHitPoint.z <= 0f)
             {
                 return;

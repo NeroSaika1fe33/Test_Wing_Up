@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     public SceneList CurrentScene;
 
+    public GameObject Car { get; set; } = null;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -29,8 +31,37 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
 
-        //Debug
-        //SceneManager.sceneLoaded += OnSceneLoaded;
+        //シーン更新伴う処理
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
+        SceneManager.sceneLoaded += OnSceneloaded;
+    }
+
+    private void OnSceneUnloaded(Scene _CurrentScene)
+    {
+
+    }
+
+    private void OnSceneloaded(Scene _CurrentScene, LoadSceneMode _mode)
+    {
+        //違うシーンに違う処理をする
+        switch(ConvertSceneNameToEnum(_CurrentScene.name))
+        {
+            case SceneList.Title:
+                Debug.Log("Titleに入た");
+                break;
+            case SceneList.Car_Selection:
+                Debug.Log("Selectionに入た");
+                break;
+            case SceneList.In_Game:
+                Debug.Log("InGameに入た");
+                break;
+            case SceneList.Result:
+                Debug.Log("Resultに入た");
+                break;
+            case SceneList.Ranking:
+                Debug.Log("Rankingに入た");
+                break;
+        }
     }
 
     private void Start()
@@ -61,12 +92,6 @@ public class GameManager : MonoBehaviour
         CurrentScene = _NextSceneName;
     }
 
-
-    //private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    //{
-    //    Debug.Log($"Scene Loaded: {scene.name}");
-    //}
-
     private void Update()
     {
         if (Input.anyKeyDown && CurrentScene == SceneList.Title)
@@ -89,5 +114,19 @@ public class GameManager : MonoBehaviour
     public SceneList GetCurrentScene()
     {
         return CurrentScene;
+    }
+
+    //
+    private SceneList ConvertSceneNameToEnum(string sceneName)
+    {
+        return sceneName switch
+        {
+            "Title" => SceneList.Title,
+            "Selection" => SceneList.Car_Selection,
+            "InGame" => SceneList.In_Game,
+            "Result" => SceneList.Result,
+            "Ranking" => SceneList.Ranking,
+            _ => throw new ArgumentOutOfRangeException(nameof(sceneName), $"不明なシーン名: {sceneName}")
+        };
     }
 }
