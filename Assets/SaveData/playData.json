@@ -4,11 +4,11 @@
     "PartsName": [
         "car_1",
         "Mainspring1",
-        "Off-road_Tire"
+        "Normal_Tire"
     ],
-    "maxSpeed": 280.0,
-    "acceleration": 200.0,
-    "weight": 160.0,
+    "maxSpeed": 0.0,
+    "acceleration": 0.0,
+    "weight": 0.0,
     "abilityName": "",
     "result": "なし"
 }

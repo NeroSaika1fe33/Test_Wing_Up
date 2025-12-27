@@ -2,7 +2,7 @@ using System;
 using System.Linq.Expressions;
 using UnityEngine;
 
-public class car_situation : MonoBehaviour
+public class Car_situation : MonoBehaviour
 {
     public enum Steat
     {

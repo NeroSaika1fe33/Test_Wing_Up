@@ -81,7 +81,7 @@ public class PlayerStats : MonoBehaviour, IStats
 
     void Update()
     {
-        if (GameManager.Instance.GetCurrentScene() == SceneList.Car_Selection)
+        if (LevelManager.Instance.GetCurrentScene() == SceneList.Car_Selection)
         {
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
             {
@@ -91,7 +91,7 @@ public class PlayerStats : MonoBehaviour, IStats
             }
         }
 
-        if (GameManager.Instance.GetCurrentScene() == SceneList.Result)
+        if (LevelManager.Instance.GetCurrentScene() == SceneList.Result)
         {
             //Debug.Log("Stats: " + maxSpeed + "," + acceleration + "," + weight);
             PlayerDataManager.Instance.SetPlayer(this);

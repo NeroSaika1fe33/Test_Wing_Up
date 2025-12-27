@@ -13,7 +13,7 @@ public class QTEController : MonoBehaviour
 
     [SerializeField] CarHealth carHealth;
     public CarController carcontroll;
-    public goal_contact Goal_Contact;
+    public Goal_contact Goal_Contact;
 
     int currentCount = 0;// Œ»İ‚Ì˜A‘Å‰ñ”
     int targetCount = 20;// –Ú•W˜A‘Å‰ñ”

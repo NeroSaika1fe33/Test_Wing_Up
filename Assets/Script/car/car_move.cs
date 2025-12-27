@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class car_move : MonoBehaviour
+public class Car_move : MonoBehaviour
 {
     public bool movable = false;
 

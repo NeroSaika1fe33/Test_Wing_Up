@@ -2,7 +2,7 @@ using UnityEngine;
 public class start_point : MonoBehaviour
 {
     float c = 0;
-	public goal_contact Goal_Contact;
+	public Goal_contact Goal_Contact;
 
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
@@ -28,8 +28,8 @@ public class start_point : MonoBehaviour
     {
         if ( c <= 0)
         {
-            var start = other.GetComponent<car_manager>();
-            var start_move = other.GetComponent<car_move>();
+            var start = other.GetComponent<Car_manager>();
+            var start_move = other.GetComponent<Car_move>();
             //レーススタート時に実行
             if (start != null)
             {

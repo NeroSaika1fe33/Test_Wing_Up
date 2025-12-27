@@ -16,10 +16,10 @@ GameObject:
   - component: {fileID: 3790663022477822419}
   - component: {fileID: 6870756851574069051}
   - component: {fileID: 5282313393207014816}
-  - component: {fileID: 4831224873207200953}
-  - component: {fileID: 6924317236633054465}
   - component: {fileID: 980829020082983410}
   - component: {fileID: 3397547480521046830}
+  - component: {fileID: -5860910932433380016}
+  - component: {fileID: -2469539948455505581}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -35,7 +35,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765880531328942072}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.99979544, z: -0, w: 0.020229457}
+  m_LocalRotation: {x: 0, y: -0.99979544, z: 0, w: 0.020227054}
   m_LocalPosition: {x: 46, y: -1.7, z: -92.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -143,11 +143,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db435c5b709f72243a4e2b8e5efbf07c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarController
+  inGameInitPos: {x: 50, y: -2, z: -95}
   autoForwardInput: 1
   qtePanel: {fileID: 0}
   acceleration: 40
   turnSpeed: 3
-  maxSpeed: 150
+  maxSpeed: 120
   energy: 1000
   airGravityMultiplier: 2
   downforcePerSpeed: 0.3
@@ -162,10 +163,10 @@ MonoBehaviour:
   cooldownSpeed: 0.75
   boostedSpeed: 0
   wallTag: wall
-  wallKnockbackSpeed: 5
+  wallKnockbackSpeed: 10
   wallKnockbackUp: 0
-  wallKnockbackLockTime: 0.2
-  steerSmooth: 6
+  wallKnockbackLockTime: 0.1
+  steerSmooth: 8
   HPUI: {fileID: 0}
   carHealth: {fileID: 3790663022477822419}
   qteController: {fileID: 0}
@@ -233,42 +234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a9623a3f8e438e4085c775e1622b18f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::car_situation
---- !u!64 &4831224873207200953
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 765880531328942072}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4068373912626513877, guid: 60518389760330a42bf5c56739c006db, type: 3}
---- !u!114 &6924317236633054465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 765880531328942072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35332d0b3c582604e99945b54ca9e462, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DontDestroy
-  unload_scenename: Result
-  load_scenename: Result
 --- !u!114 &980829020082983410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f875309a26a90343aaa24f2cd989ee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SetParts
-  partsDataManager: {fileID: 0}
+  partsDataManager: {fileID: 1585170281805980302, guid: f1ed1b8aeeffb944f93561b52f6af4cc, type: 3}
   BodyPrefabName: car_1
   MainspringPrefabName: Mainspring1
   TirePrefabName: Normal_Tire
@@ -304,7 +269,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57884a049295f624e93bca244a5f64b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
-  PDManager: {fileID: 0}
+  PDManager: {fileID: 1585170281805980302, guid: f1ed1b8aeeffb944f93561b52f6af4cc, type: 3}
+--- !u!114 &-5860910932433380016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765880531328942072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f43668e9447ff0740bf30253469de626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Car
+--- !u!135 &-2469539948455505581
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765880531328942072}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.131974
+  m_Center: {x: 0.00000002980233, y: -0.0074018836, z: -0.0014299158}
 --- !u!1 &1383924649242928364
 GameObject:
   m_ObjectHideFlags: 0

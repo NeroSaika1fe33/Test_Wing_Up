@@ -6,7 +6,7 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     [Header("SceneManagement")]
-    public Vector3 inGameInitPos = new Vector3(50, -2, -95);  
+    public Vector3 inGameInitPos = new Vector3(50, -2, -95);
 
     [Header("Auto Move")]
     [Range(0f, 1f)]
@@ -105,8 +105,6 @@ public class CarController : MonoBehaviour
 
     void Start()
     {
-
-
         //パネル off
         if (qtePanel != null)
             qtePanel.SetActive(false);
@@ -143,16 +141,21 @@ public class CarController : MonoBehaviour
         maxSpeed += GameSelectionData.addMaxSpeed;
 
         //パーツ選択ならフリーズ
-        if (GameManager.Instance.GetCurrentScene() != SceneList.In_Game)
+        if (LevelManager.Instance.GetCurrentScene() != SceneList.In_Game)
         {
             rb.constraints = RigidbodyConstraints.FreezePosition;
             rb.isKinematic = true;
         }
 
-        if (GameManager.Instance.GetCurrentScene() == SceneList.In_Game)
+        if (LevelManager.Instance.GetCurrentScene() == SceneList.In_Game)
         {
+            rb.isKinematic = false;
+            rb.constraints = RigidbodyConstraints.None;
             transform.position = inGameInitPos;
         }
+
+        //forDebug
+
     }
 
     void Update()
@@ -186,7 +189,6 @@ public class CarController : MonoBehaviour
         {
             inputV = 0f;    // 地面に接触していない
         }
-
 
         inputH = Input.GetAxis("Horizontal"); // 左右入力（-1～1）A/D
         // 入力平滑化（追従速度はsteerSmooth）
@@ -280,7 +282,7 @@ public class CarController : MonoBehaviour
 
 
         //横滑り抑制（lateralGripは「小さいほど横滑りが減る」仕様）
-        //ApplyLateralGrip();
+        ApplyLateralGrip();
 
         // ドリフト中は旋回倍率UP
         float turnMul = (driftState == DriftState.Drifting) ? 1.2f : 1f;
@@ -447,11 +449,11 @@ public class CarController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("HIT WALL: " + collision.gameObject.name);
 
         // 壁（tag=wall）に当たった時のみ処理
         if (collision.gameObject.CompareTag("wall"))
         {
+            Debug.Log("HIT WALL: " + collision.gameObject.name);
             //無敵中はノックバックしない
             if (carHealth != null && carHealth.IsInvincible)
             {

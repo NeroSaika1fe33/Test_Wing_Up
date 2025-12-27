@@ -1,6 +1,6 @@
 using UnityEngine;
 using static UnityEngine.InputSystem.HID.HID;
-public class goal_contact : MonoBehaviour
+public class Goal_contact : MonoBehaviour
 {
     //public CarController carController;
 
@@ -43,8 +43,8 @@ public class goal_contact : MonoBehaviour
 	}
 	void OnTriggerEnter(Collider other)
     {
-        var car_situation = other.GetComponent<car_situation>();
-        var car_manager = other.GetComponent<car_manager>();
+        var car_situation = other.GetComponent<Car_situation>();
+        var car_manager = other.GetComponent<Car_manager>();
 		var carController = other.GetComponent<CarController>();
 
 		if (car_manager != null && car_situation != null)

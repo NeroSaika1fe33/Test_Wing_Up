@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class car_manager : MonoBehaviour
+public class Car_manager : MonoBehaviour
 {
-    car_situation car_Situation;
+    Car_situation car_Situation;
 
     float SceneCount = 0;
 
@@ -24,7 +24,7 @@ public class car_manager : MonoBehaviour
             SceneCount -= Time.deltaTime;
             if (SceneCount <= 0)
             {
-                GameManager.Instance.LoadScene(SceneList.Result);
+                LevelManager.Instance.LoadScene(SceneList.Result);
                 SceneCount = 0;
             }
         }

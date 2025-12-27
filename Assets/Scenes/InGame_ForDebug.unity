@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 345999959}
   - component: {fileID: 345999960}
   m_Layer: 5
-  m_Name: HUD
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -960,7 +960,7 @@ GameObject:
   - component: {fileID: 730591041}
   - component: {fileID: 730591040}
   m_Layer: 5
-  m_Name: QTEPanel
+  m_Name: qtePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1326,24 +1326,16 @@ PrefabInstance:
       value: Goal
       objectReference: {fileID: 0}
     - target: {fileID: 1956820599816521378, guid: a951e10a0a4f0df468f5d94131f073a4, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 36.393337
-      objectReference: {fileID: 0}
-    - target: {fileID: 1956820599816521378, guid: a951e10a0a4f0df468f5d94131f073a4, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.2167
-      objectReference: {fileID: 0}
-    - target: {fileID: 1956820599816521378, guid: a951e10a0a4f0df468f5d94131f073a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 52.9
+      value: 932.1427
       objectReference: {fileID: 0}
     - target: {fileID: 1956820599816521378, guid: a951e10a0a4f0df468f5d94131f073a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 53
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1956820599816521378, guid: a951e10a0a4f0df468f5d94131f073a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -170.4
+      value: -125.57208
       objectReference: {fileID: 0}
     - target: {fileID: 1956820599816521378, guid: a951e10a0a4f0df468f5d94131f073a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1468,7 +1460,7 @@ MonoBehaviour:
   TrackerSettings:
     BindingMode: 3
     PositionDamping: {x: 0, y: 0, z: 0}
-    AngularDampingMode: 0
+    AngularDampingMode: 1
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
   FollowOffset: {x: 0, y: 2, z: -6}

@@ -11,12 +11,14 @@ public enum SceneList : int
     Ranking
 }
 
-public class GameManager : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
     //シングルトン
-    public static GameManager Instance;
+    public static LevelManager Instance;
 
     public SceneList CurrentScene;
+
+    public SceneList InitScene = SceneList.Title;
 
     public GameObject Car { get; set; } = null;
 
@@ -44,7 +46,7 @@ public class GameManager : MonoBehaviour
     private void OnSceneloaded(Scene _CurrentScene, LoadSceneMode _mode)
     {
         //違うシーンに違う処理をする
-        switch(ConvertSceneNameToEnum(_CurrentScene.name))
+        switch (ConvertSceneNameToEnum(_CurrentScene.name))
         {
             case SceneList.Title:
                 Debug.Log("Titleに入た");
@@ -66,7 +68,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        CurrentScene = SceneList.Title;
+
+        CurrentScene = InitScene;
     }
     //シーン遷移判定
     public void LoadScene(SceneList _NextSceneName)
@@ -126,6 +129,7 @@ public class GameManager : MonoBehaviour
             "InGame" => SceneList.In_Game,
             "Result" => SceneList.Result,
             "Ranking" => SceneList.Ranking,
+            "InGame_ForDebug"=>SceneList.In_Game,   
             _ => throw new ArgumentOutOfRangeException(nameof(sceneName), $"不明なシーン名: {sceneName}")
         };
     }
